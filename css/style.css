@@ -74,6 +74,9 @@ body {
 .menu_item :last-child a {
     margin-right: 0;
 }
+.menu__mobile {
+    display: none;
+}
 .active a {
     color: #010101;
 }
@@ -90,7 +93,8 @@ body {
     font-weight: 400;
     letter-spacing: 0.02em;
     color: #1d1e1f;
-    margin: 207 auto 4px;
+    padding-top: 207px;
+    margin: 0px auto 4px;
 }
 .header__text {
     font-family: "Merriweather-LightItalic", serif;
@@ -178,8 +182,8 @@ body {
     font-weight: 400;
     letter-spacing: 0.02em;
     color: #1d1e1f;
-    margin: 0 auto;
-    padding-top: 138px;
+    margin: 0;
+    padding-top: 99px;
     margin-bottom: 13px;
     height: 217px;
 }
@@ -306,8 +310,7 @@ body {
     letter-spacing: 0.02em;
     color: #898888;
 }
-.contact__inner {
-}
+
 .contact__icon-box {
     display: flex;
     padding-top: 64px;
@@ -341,10 +344,6 @@ body {
     color: #4b4b4b;
     text-decoration: underline;
 }
-.icon-location {
-}
-.icon-mail-alt {
-}
 .contact__form {
     padding-top: 153px;
     display: flex;
@@ -365,13 +364,12 @@ body {
 }
 .contact__name {
     margin-bottom: 20px;
-  
 }
 .contact__email {
-    margin-bottom: 20px;
+    margin-bottom: 21px;
 }
 .contact__number {
-    margin-bottom: 18px;
+    margin-bottom: 20px;
 }
 
 input::-webkit-outer-spin-button,
@@ -412,7 +410,8 @@ input[type='number'] {
 /* Footer */
 
 .footer {
-    padding-top: 154px;
+    padding-top: 138px;
+    padding-bottom: 50px;
 }
 .footer_text {
     text-align: center;
@@ -423,5 +422,147 @@ input[type='number'] {
     color: #3b3b3b;
 }
 
+/* media for iPad */
 
+@media screen and (max-width: 769px) {
+    .container {
+        width: 768px;
+    }
+    .about {
+        height: auto;
+        padding-bottom: 200px;
+    }
+    .about__inner {
+        grid-gap: 30px;
+        grid-template-columns: max-content;
+    }
+    .team .block__title,
+    .provide .block__title {
+        padding-top: 100px;
+    }
+    .provide__inner {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .provide__item {
+        max-width: 300px;
+        margin: 0 30px 40px;
+    }
+    .contact__form {
+        padding-top: 100px;
+    }
+    .footer {
+        padding-top: 30px;
+    }
+}
+
+/* media for iPhone */
+
+@media screen and (max-width: 376px) {
+    .container {
+        width: 375px;
+    }
+    .logo {
+        margin: 0 -15px;
+    }
+    .menu__desktop {
+        display: none;
+    }
+    .menu__mobile {
+        display: flex;
+        flex-direction: column;
+    }
+    .menu__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .menu {
+        display: none;
+        text-align: center;
+    }
+    .menu li {
+        padding: 10px 0;
+    }
+    .menu a {
+        margin: 0;
+    }
+    .menu__burger {
+        display: block;
+        overflow: hidden;
+        cursor: pointer;
+        margin: 0;
+        padding: 0;
+        width: 40px;
+        height: 40px;
+        font-size: 0;
+        background-color: #000;
+        border-radius: 5px;
+        position: relative;
+    }
+    .menu__burger span {
+        display: block;
+        position: absolute;
+        background-color: #fff;
+        height: 3px;
+        width: 30px;
+        top: 18px;
+        left: 5px;
+        right: 5px;
+        transition: background 0s 0.3s;
+
+    }
+    .menu__burger span:after,
+    .menu__burger span:before {
+        position: absolute;
+        display: block;
+        height: 4px;
+        background-color: #fff;
+        content: '';
+        transition: 0s 0.3s;
+        transition-duration: 0.3s, 0s;
+        transition-delay: 0.3s, 0s;
+    }
+    .menu__burger span:after {
+        top: -10px;
+    }
+    .menu__burger span:before {
+        bottom: -10px;
+    }
+    .menu__burger.close span {
+        background: none;
+    }
+    .menu__burger.close span:after {
+        top: 0px;
+        transform: rotate(45deg);
+    }
+    .menu__burger.close span:before {
+        bottom: 0px;
+        transform: rotate(-45deg);
+    }
+    .header__title {
+        padding-top: 100px;
+        margin-bottom: 30px;
+}
+.header__button {
+    margin-bottom: 100px;
+}
+.about__item {
+    max-width: 340px;
+}
+.team {
+    height: auto;
+    padding-bottom: 100px;
+}
+.team__inner {
+    padding-top: 100px;
+    flex-wrap: wrap;
+}
+.team__item {
+    width: 340px;
+}
+.provide__inner {
+    padding-top: 100px;
+}
+}
 
